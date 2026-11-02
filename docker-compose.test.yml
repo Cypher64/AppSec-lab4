@@ -6,3 +6,14 @@ services:
   app:
     image: bkimminich/juice-shop:latest
     build: ./
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /juice-shop/logs:uid=65532
+      - /juice-shop/uploads:uid=65532
+    volumes:
+      - /juice-shop/ftp
+      - /juice-shop/i18n
+      - /juice-shop/data
+      - /juice-shop/.well-known
+      - /juice-shop/frontend/dist
