@@ -7,6 +7,8 @@ services:
     image: bkimminich/juice-shop:latest
     build: ./
     read_only: true
+    sequrity_opt:
+      - no-new-privilages:true
     tmpfs:
       - /tmp
       - /juice-shop/logs:uid=65532
